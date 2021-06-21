@@ -9,7 +9,7 @@
     "channel": "main",
     "quality": "128k"
   },
-  "stream-links": {
+  "stream_links": {
     "main": {
       "320k": "https://stream.radioparadise.com/aac-320",
       "128k": "https://stream.radioparadise.com/aac-128",
