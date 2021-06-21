@@ -51,7 +51,7 @@
       "not_in_voice": "You have to be in a voice channel for this command!"
     },
     "leave": {
-      "help": "The bot is leaving the voice channel"
+      "help": "The bot leaves the voice channel"
     },
     "play": {
       "help": "The bot starts the music playback. You can choose one of the channels 'main, mellow, rock, world-etc' and a playback quality '320k, 128k, 64k, 32k'. Default are main and 128k",
