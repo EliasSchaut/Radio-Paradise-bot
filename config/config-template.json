@@ -3,5 +3,32 @@
   "token": "YOUR_TOKEN",
   "commands_path": "./commands",
   "lang": "en",
-  "admin_ids": [ ]
+  "admin_ids": [ ],
+
+  "stream-links": {
+    "main": {
+      "320k": "https://stream.radioparadise.com/aac-320",
+      "128k": "https://stream.radioparadise.com/aac-128",
+      "64k": "https://stream.radioparadise.com/aac-64",
+      "32k": "https://stream.radioparadise.com/aac-32"
+    },
+    "mellow": {
+      "320k": "https://stream.radioparadise.com/mellow-320",
+      "128k": "https://stream.radioparadise.com/mellow-128",
+      "64k": "https://stream.radioparadise.com/mellow-64",
+      "32k": "https://stream.radioparadise.com/mellow-32"
+    },
+    "rock": {
+      "320k": "https://stream.radioparadise.com/rock-320",
+      "128k": "https://stream.radioparadise.com/rock-128",
+      "64k": "https://stream.radioparadise.com/rock-64",
+      "32k": "https://stream.radioparadise.com/rock-32"
+    },
+    "world-etc": {
+      "320k": "https://stream.radioparadise.com/world-etc-320",
+      "128k": "https://stream.radioparadise.com/world-etc-128",
+      "64k": "https://stream.radioparadise.com/world-etc-64",
+      "32k": "https://stream.radioparadise.com/world-etc-32"
+    }
+  }
 }
