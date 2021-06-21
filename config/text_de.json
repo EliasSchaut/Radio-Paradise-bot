@@ -45,6 +45,22 @@
       "invalid_command": "Es gibt keinen Befehl mit diesem Namen oder Alias",
       "success": "wurde neu geladen!",
       "fail": "Es gab einen Fehler beim Nachladen des Befehls"
+    },
+    "join": {
+      "help": "",
+      "usage": ""
+    },
+    "leave": {
+      "help": "",
+      "usage": ""
+    },
+    "play": {
+      "help": "",
+      "usage": ""
+    },
+    "stop": {
+      "help": "",
+      "usage": ""
     }
   }
 }

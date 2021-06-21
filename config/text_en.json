@@ -45,6 +45,22 @@
       "invalid_command": "There is no command with this name or alias",
       "success": "was reloaded!",
       "fail": "There was an error while reloading a command"
+    },
+    "join": {
+      "help": "",
+      "usage": ""
+    },
+    "leave": {
+      "help": "",
+      "usage": ""
+    },
+    "play": {
+      "help": "",
+      "usage": ""
+    },
+    "stop": {
+      "help": "",
+      "usage": ""
     }
   }
 }

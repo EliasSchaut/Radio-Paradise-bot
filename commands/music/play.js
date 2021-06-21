@@ -1,10 +1,10 @@
 const { lang } = require("../../config/config.json");
-const text = require(`../../config/text_${lang}.json`).commands.echo;
+const text = require(`../../config/text_${lang}.json`).commands.play;
 
 module.exports = {
-    name: 'echo',
+    name: 'play',
     description: text.help,
-    aliases: ['echos'],
+    aliases: [''],
     args: true,
     usage: text.usage,
     args_min_length: 1,
