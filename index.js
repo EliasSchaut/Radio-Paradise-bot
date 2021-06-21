@@ -2,7 +2,7 @@
 const fs = require('fs');
 
 // require the discord.js module
-const Discord = require('discord.js');
+const Discord = require('discord.js')
 
 // require the config.json and text.js module
 const config = require('./config/config.json');

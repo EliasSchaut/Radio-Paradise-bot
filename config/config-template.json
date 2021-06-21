@@ -5,6 +5,10 @@
   "lang": "en",
   "admin_ids": [ ],
 
+  "_default": {
+    "channel": "main",
+    "quality": "128k"
+  },
   "stream-links": {
     "main": {
       "320k": "https://stream.radioparadise.com/aac-320",

@@ -58,7 +58,11 @@
       "help": "",
       "usage": ""
     },
-    "stop": {
+    "resume": {
+      "help": "",
+      "usage": ""
+    },
+    "pause": {
       "help": "",
       "usage": ""
     }
