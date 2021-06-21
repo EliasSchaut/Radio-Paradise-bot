@@ -14,7 +14,7 @@ module.exports = {
     dmOnly: false,
     restricted: false,
     async execute(message, args) {
-        if (!connection_manager.is_connected()) {
+        if (!connection_manager.is_connected() || (message.client.voice.broadcasts.length < 1)) {
             await join.execute(message)
         }
         const connection = connection_manager.get_connection()
