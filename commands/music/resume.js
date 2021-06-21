@@ -13,6 +13,9 @@ module.exports = {
     execute(message, args) {
         if (connection_manager.is_dispatched()) {
             connection_manager.get_dispatcher().resume()
+
+        } else {
+            message.reply(text.not_dispatched)
         }
     },
 };

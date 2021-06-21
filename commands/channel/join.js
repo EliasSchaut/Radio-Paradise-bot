@@ -16,8 +16,7 @@ module.exports = {
             connection_manager.connect(connection)
 
         } else {
-            message.reply("You have to be in a voice channel!")
-
+            message.reply(text.not_in_voice)
         }
     }
 };

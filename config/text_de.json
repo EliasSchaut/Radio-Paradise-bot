@@ -47,24 +47,23 @@
       "fail": "Es gab einen Fehler beim Nachladen des Befehls"
     },
     "join": {
-      "help": "",
-      "usage": ""
+      "help": "Der Bot joint in dem Sprach-Channel, indem man sich gerade befindet",
+      "not_in_voice": "Du musst dafür in einem Sprach-Channel sein!"
     },
     "leave": {
-      "help": "",
-      "usage": ""
+      "help": "Der Bot verlässt den Sprach-Channel"
     },
     "play": {
-      "help": "",
-      "usage": ""
+      "help": "Der Bot startet die Musikwiedergabe. Hierbei kann einer der Kanäle 'main, mellow, rock, world-etc' gewählt werden und eine Wiedergabe-Qualität '320k, 128k, 64k, 32k'. Standard sind main und 128k",
+      "usage": "[Kanal] [Qualität]"
     },
     "resume": {
-      "help": "",
-      "usage": ""
+      "help": "Der Bot setzt die Musikwiedergabe fort",
+      "not_dispatched": "Die Musikwiedergabe wurde noch nicht initiiert! Schreibe zunächst play!"
     },
     "pause": {
-      "help": "",
-      "usage": ""
+      "help": "Der Bot pausiert die Musikwiedergabe",
+      "not_dispatched": "Die Musikwiedergabe wurde noch nicht initiiert! Schreibe zunächst play!"
     }
   }
 }

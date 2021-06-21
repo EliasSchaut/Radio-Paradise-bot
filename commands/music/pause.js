@@ -5,7 +5,7 @@ const connection_manager = require("../../js/connection_manager")
 module.exports = {
     name: 'pause',
     description: text.help,
-    aliases: ['stop'],
+    aliases: ['s', 'stop'],
     args: false,
     guildOnly: true,
     dmOnly: false,
@@ -13,6 +13,9 @@ module.exports = {
     execute(message, args) {
         if (connection_manager.is_dispatched()) {
             connection_manager.get_dispatcher().pause()
+
+        } else {
+            message.reply(text.not_dispatched)
         }
     },
 };

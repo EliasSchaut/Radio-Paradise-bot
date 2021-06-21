@@ -1,4 +1,4 @@
-const { lang, stream_links } = require("../../config/config.json")
+const { lang } = require("../../config/config.json")
 const connection_manager = require("../../js/connection_manager")
 const chooser = require("../../js/stream_chooser")
 const join = require("../channel/join")

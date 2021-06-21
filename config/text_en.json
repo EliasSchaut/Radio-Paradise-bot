@@ -47,24 +47,23 @@
       "fail": "There was an error while reloading a command"
     },
     "join": {
-      "help": "",
-      "usage": ""
+      "help": "The bot joins in the voice channel you are currently in",
+      "not_in_voice": "You have to be in a voice channel for this command!"
     },
     "leave": {
-      "help": "",
-      "usage": ""
+      "help": "The bot is leaving the voice channel"
     },
     "play": {
-      "help": "",
-      "usage": ""
+      "help": "The bot starts the music playback. You can choose one of the channels 'main, mellow, rock, world-etc' and a playback quality '320k, 128k, 64k, 32k'. Default are main and 128k",
+      "usage": "[channel] [quality]"
     },
     "resume": {
-      "help": "",
-      "usage": ""
+      "help": "The bot resumes music playback",
+      "not_dispatched": "Music playback has not been initiated yet! Write play first!"
     },
     "pause": {
-      "help": "",
-      "usage": ""
+      "help": "The bot is pausing the music playback",
+      "not_dispatched": "Music playback has not been initiated yet! Write play first!"
     }
   }
 }
