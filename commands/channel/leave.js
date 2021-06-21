@@ -1,17 +1,20 @@
 const { lang } = require("../../config/config.json");
+const connection_manager = require("../../js/connection_manager");
 const text = require(`../../config/text_${lang}.json`).commands.leave;
 
 module.exports = {
     name: 'leave',
     description: text.help,
     aliases: [''],
-    args: true,
-    usage: text.usage,
-    args_min_length: 1,
-    guildOnly: false,
+    args: false,
+    guildOnly: true,
     dmOnly: false,
     restricted: false,
-    execute(message, args) {
-        message.channel.send(`${args}`);
-    },
-};
+    async execute(message, args) {
+        const connection = connection_manager.get_connection()
+        if (connection !== null) {
+            await connection.disconnect()
+            connection_manager.disconnect();
+        }
+    }
+}
