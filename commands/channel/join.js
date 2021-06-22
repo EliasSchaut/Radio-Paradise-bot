@@ -11,12 +11,19 @@ module.exports = {
     dmOnly: false,
     restricted: false,
     async execute(message, args) {
-        if (message.member.voice.channel) {
-            const connection = await message.member.voice.channel.join();
+        const join_channel = message.member.voice.channel
+        console.log(`Try to join into ${join_channel}`)
+
+        if (join_channel) {
+            const connection = await join_channel.join();
             connection_manager.connect(connection)
+
+            message.channel.send(`Bot joins in channel *${join_channel.name}*`)
+            console.log(`Bot successfully joins in ${join_channel.name} in guild ${message.guild}`)
 
         } else {
             message.reply(text.not_in_voice)
+            console.log(`Bot failed joining`)
         }
     }
 };

@@ -16,6 +16,10 @@ module.exports = {
             await connection.disconnect()
             connection_manager.disconnect()
             connection_manager.remove_dispatcher()
+
+        } else {
+            message.reply("Bot isn't connected to a voice channel")
+
         }
     }
 }

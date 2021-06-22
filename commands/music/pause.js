@@ -12,7 +12,14 @@ module.exports = {
     restricted: false,
     execute(message, args) {
         if (connection_manager.is_dispatched()) {
-            connection_manager.get_dispatcher().pause()
+            const dispatcher = connection_manager.get_dispatcher()
+
+            if (!dispatcher.isPaused()) {
+                connection_manager.get_dispatcher().pause()
+                message.channel.send("Bot paused")
+            } else {
+                message.channel.send("Bot already paused")
+            }
 
         } else {
             message.reply(text.not_dispatched)

@@ -14,13 +14,30 @@ module.exports = {
     dmOnly: false,
     restricted: false,
     async execute(message, args) {
-        if (!connection_manager.is_connected() || (message.client.voice.broadcasts.length < 1)) {
+
+        // bot is not in a voice channel
+        if (!message.guild.me.voice.channel) {
+            console.log("bot is not in a voice channel")
             await join.execute(message)
         }
+
+        // bot is in a voice channel, but the connection is not safed in the connection manager
+        if (!connection_manager.is_connected()) {
+            console.log("Bot is in a voice channel, but the connection is not safed in the connection manager")
+            connection_manager.connect(await message.guild.me.voice.channel.join())
+        }
+
         const connection = connection_manager.get_connection()
 
         const stream = chooser.choose(args)
-        const dispatcher = connection.play(stream)
+        console.log("Try to start playback from source " + stream)
+        const dispatcher = await connection.play(stream)
+        console.log("Playback initiated")
         connection_manager.set_dispatcher(dispatcher)
+
+        dispatcher.on('start', () => {
+            message.channel.send("Start playing")
+            console.log('Successfully started playback!');
+        });
     },
 };

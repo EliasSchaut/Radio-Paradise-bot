@@ -75,6 +75,7 @@ client.on('message', message => {
 
     // try to execute
     try {
+        console.log(`\nExecute ${command.name} command in guild ${message.guild}`)
         command.execute(message, args);
     } catch (error) {
         console.error(error);

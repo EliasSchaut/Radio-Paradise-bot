@@ -12,7 +12,14 @@ module.exports = {
     restricted: false,
     execute(message, args) {
         if (connection_manager.is_dispatched()) {
-            connection_manager.get_dispatcher().resume()
+            const dispatcher = connection_manager.get_dispatcher()
+
+            if (dispatcher.isPaused()) {
+                connection_manager.get_dispatcher().resume()
+                message.channel.send("Bot resumed")
+            } else {
+                message.channel.send("Bot already plays")
+            }
 
         } else {
             message.reply(text.not_dispatched)
