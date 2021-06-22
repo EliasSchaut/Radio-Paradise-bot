@@ -15,9 +15,8 @@ module.exports = {
         if (connection_manager.is_connected()) {
             message.channel.send(`Bot left`)
             await connection.disconnect()
-            connection_manager.disconnect()
-            connection_manager.remove_dispatcher()
             console.log(`Bot left`)
+            // Event-Listener from join will now also execute
 
         } else {
             message.reply("bot isn't connected to a voice channel")

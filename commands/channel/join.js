@@ -1,6 +1,7 @@
 const { lang } = require("../../config/config.json")
 const connection_manager = require("../../js/connection_manager")
 const text = require(`../../config/text_${lang}.json`).commands.join
+const leave = require('./leave.js')
 
 module.exports = {
     name: 'join',
@@ -20,8 +21,22 @@ module.exports = {
             connection_manager.connect(connection)
             console.log(`Bot successfully joins in ${join_channel.name} in guild ${message.guild}`)
 
+            // cyclic check, if the bot is the only user in the voice channel. If true, he leaves
+            const timerID = setInterval(function () {
+                if (!join_channel) {
+                    clearInterval(timerID)
+                }
 
+                if (join_channel.members.size === 1) {
+                    leave.execute()
+                    clearInterval(timerID)
+                }
+
+            }, 1000 * 60 * 5) // 5 Min
+
+            // remove connection in connection_manager and event-listener when bot disconnect
             connection.on('disconnect', () => {
+                clearInterval(timerID)
                 connection_manager.disconnect()
                 console.log('disconnect')
             })
