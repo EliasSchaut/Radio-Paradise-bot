@@ -5,7 +5,7 @@ const text = require(`../../config/text_${lang}.json`).commands.leave
 module.exports = {
     name: 'leave',
     description: text.help,
-    aliases: ['l', 'destroy', 'genocide'],
+    aliases: ['l', 'dc', 'destroy', 'genocide', 'disconnect'],
     args: false,
     guildOnly: true,
     dmOnly: false,
@@ -13,13 +13,14 @@ module.exports = {
     async execute(message, args) {
         const connection = connection_manager.get_connection()
         if (connection_manager.is_connected()) {
+            message.channel.send(`Bot left`)
             await connection.disconnect()
             connection_manager.disconnect()
             connection_manager.remove_dispatcher()
+            console.log(`Bot left`)
 
         } else {
-            message.reply("Bot isn't connected to a voice channel")
-
+            message.reply("bot isn't connected to a voice channel")
         }
     }
 }

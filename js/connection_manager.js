@@ -12,6 +12,10 @@ function get_connection() {
     return connection_manager
 }
 
+function is_connected() {
+    return connected
+}
+
 function connect(con) {
     connected = true
     connection_manager = con
@@ -21,10 +25,6 @@ function disconnect() {
     connection_manager = null
     connected = false
     remove_dispatcher()
-}
-
-function is_connected() {
-    return connected
 }
 // ------------------------------
 

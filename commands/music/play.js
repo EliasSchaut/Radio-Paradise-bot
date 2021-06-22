@@ -38,6 +38,10 @@ module.exports = {
         dispatcher.on('start', () => {
             message.channel.send("Start playing")
             console.log('Successfully started playback!');
-        });
+        })
+
+        dispatcher.on('error', () => {
+            console.error('An error accrued from dispatcher')
+        })
     },
 };

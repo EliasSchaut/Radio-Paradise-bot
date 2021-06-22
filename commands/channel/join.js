@@ -15,11 +15,16 @@ module.exports = {
         console.log(`Try to join into ${join_channel}`)
 
         if (join_channel) {
+            message.channel.send(`Bot joins in channel *${join_channel.name}*`)
             const connection = await join_channel.join();
             connection_manager.connect(connection)
-
-            message.channel.send(`Bot joins in channel *${join_channel.name}*`)
             console.log(`Bot successfully joins in ${join_channel.name} in guild ${message.guild}`)
+
+
+            connection.on('disconnect', () => {
+                connection_manager.disconnect()
+                console.log('disconnect')
+            })
 
         } else {
             message.reply(text.not_in_voice)
