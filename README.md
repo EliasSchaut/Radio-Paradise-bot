@@ -30,6 +30,7 @@ This bot can run the following commands (and more like `help`):
     * **OPTIONAL**: Change `lang` from `en` to `de` for german instead of english language.
     * **OPTIONAL**: change default channel or quality
 3. Run ```npm install```.
+4. Run `npm install ffmpeg-static`
 
 ## Run
 Run ```index.js``` with ```npm start``` or ```node index.js```.
