@@ -10,6 +10,8 @@ module.exports = {
     guildOnly: false,
     dmOnly: false,
     restricted: false,
+    inVoice: false,
+    sameChannel: false,
     execute(message, args) {
         const data = [];
         const { commands } = message.client;

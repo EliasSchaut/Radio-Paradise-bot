@@ -12,6 +12,8 @@ module.exports = {
     guildOnly: false,
     dmOnly: false,
     restricted: true,
+    inVoice: false,
+    sameChannel: false,
     execute(message, args) {
         const commandName = args[0].toLowerCase();
         const command = message.client.commands.get(commandName)

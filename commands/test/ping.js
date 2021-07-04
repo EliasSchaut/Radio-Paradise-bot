@@ -9,6 +9,8 @@ module.exports = {
     guildOnly: false,
     dmOnly: false,
     restricted: false,
+    inVoice: false,
+    sameChannel: false,
     execute(message, args) {
         message.channel.send(`${text.websocket} ${message.mentions.client.ws.ping}ms.`);
 

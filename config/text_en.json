@@ -5,7 +5,9 @@
     "restricted": "Unfortunately, you are not authorised to execute this command!",
     "missing_args": "You have given the wrong number of arguments",
     "missing_args_proper_use": "The proper usage would be: ",
-    "error": "There was an error trying to execute that command! Ask the holy Ilias for help!"
+    "error": "There was an error trying to execute that command! Ask the holy Ilias for help!",
+    "not_in_voice": "You have to be in a voice channel to use this command!",
+    "not_same_channel": "You have to be in the same channel with the bot to use this command!"
   },
   "commands": {
     "echo": {
@@ -51,7 +53,8 @@
       "not_in_voice": "You have to be in a voice channel for this command!"
     },
     "leave": {
-      "help": "The bot leaves the voice channel"
+      "help": "The bot leaves the voice channel",
+      "bot_not_alone_or_same_channel": "Bot has to be alone or with you in a voice channel!"
     },
     "play": {
       "help": "The bot starts the music playback. You can choose one of the channels 'main, mellow, rock, world-etc' and a playback quality '320k, 128k, 64k, 32k'. Default are main and 128k",
