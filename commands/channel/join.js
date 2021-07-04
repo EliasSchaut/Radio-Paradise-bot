@@ -11,6 +11,8 @@ module.exports = {
     guildOnly: true,
     dmOnly: false,
     restricted: false,
+    inVoice: true,
+    sameChannel: false,
     async execute(message, args) {
         const join_channel = message.member.voice.channel
         console.log(`Try to join into ${join_channel}`)
@@ -43,7 +45,7 @@ module.exports = {
 
         } else {
             message.reply(text.not_in_voice)
-            console.log(`Bot failed joining`)
+            console.log(`Bot failed joining to voice channel because caller ` + message.author.name + "is not in a voice channel")
         }
     }
 };

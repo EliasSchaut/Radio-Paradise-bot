@@ -4,6 +4,9 @@ const fs = require('fs');
 // require the discord.js module
 const Discord = require('discord.js')
 
+// require connection manager
+const connection_manager = require("./js/connection_manager.js")
+
 // require the config.json and text.js module
 const config = require('./config/config.json');
 const text = require(`./config/text_${config.lang}.json`).index;
@@ -71,6 +74,21 @@ client.on('message', message => {
         }
 
         return message.channel.send(reply);
+    }
+
+    // check if command requires user to be in a voice channel
+    if (command.inVoice && message.member.voice.channel == null) {
+        console.log("command " + command.name + " requires user to be in a voice channel")
+        return message.reply(text.not_in_voice)
+    }
+
+    // check if command requires user has to be in a channel with the bot
+    if (command.sameChannel) {
+        let connection = connection_manager.is_connected() ? connection_manager.get_connection() : null
+        if (!connection || (connection.voice.channel !== message.member.voice.channel)) {
+            console.log("command " + command.name + " requires the bot and the user to be in the same channel")
+            return message.reply(text.not_same_channel)
+        }
     }
 
     // try to execute

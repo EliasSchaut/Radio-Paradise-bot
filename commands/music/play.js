@@ -13,6 +13,8 @@ module.exports = {
     guildOnly: true,
     dmOnly: false,
     restricted: false,
+    inVoice: true,
+    sameChannel: false,
     async execute(message, args) {
 
         // bot is not in a voice channel
@@ -23,11 +25,18 @@ module.exports = {
 
         // bot is in a voice channel, but the connection is not safed in the connection manager
         if (!connection_manager.is_connected()) {
-            console.log("Bot is in a voice channel, but the connection is not safed in the connection manager")
+            console.log("Bot is in a voice channel, but the connection is not saved in the connection manager")
             connection_manager.connect(await message.guild.me.voice.channel.join())
         }
 
         const connection = connection_manager.get_connection()
+
+        //check if caller is in same channel as bot
+        if (!(message.member.voice.channel === connection.voice.channel)) {
+            console.log("user " + message.author.username + " used the " + this.name + " command outside of the channel this bot is connected to")
+            message.channel.send("you have to be in the same channel as the bot to use this command")
+            return
+        }
 
         const stream = chooser.choose(args)
         console.log("Try to start playback from source " + stream)

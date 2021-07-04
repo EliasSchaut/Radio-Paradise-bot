@@ -10,6 +10,8 @@ module.exports = {
     guildOnly: true,
     dmOnly: false,
     restricted: false,
+    inVoice: true,
+    sameChannel: true,
     execute(message, args) {
         if (connection_manager.is_dispatched()) {
             const dispatcher = connection_manager.get_dispatcher()

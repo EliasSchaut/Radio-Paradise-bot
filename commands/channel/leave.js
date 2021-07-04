@@ -10,11 +10,21 @@ module.exports = {
     guildOnly: true,
     dmOnly: false,
     restricted: false,
+    inVoice: false,
+    sameChannel: false,
     async execute(message, args) {
         const connection = connection_manager.get_connection()
         if (connection_manager.is_connected()) {
-            message.channel.send(`Bot left`)
+            // only execute if caller is in same channel or if bot is alone in channel
+            if (connection.voice.channel.members.size !== 1) {
+                if (message.member.voice.channel !== connection.voice.channel) {
+                    //do not execute command
+                    console.log(this.name + " command has been issued out of voice channel while bot was not alone!")
+                    return message.reply(text.bot_not_alone_or_same_channel)
+                }
+            }
             await connection.disconnect()
+            message.channel.send(`Bot left`)
             console.log(`Bot left`)
             // Event-Listener from join will now also execute
 

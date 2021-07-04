@@ -5,7 +5,9 @@
     "restricted": "Du bist leider nicht berechtigt, diesen Befehl auszuführen!",
     "missing_args": "Du hast die falsche Anzahl an Argummente abgegeben",
     "missing_args_proper_use": "Die korrekte Verwendung wäre: ",
-    "error": "Es gab einen Fehler beim Versuch, diesen Befehl auszuführen!"
+    "error": "Es gab einen Fehler beim Versuch, diesen Befehl auszuführen!",
+    "not_in_voice": "Du musst in einem Sprachkanal sein, um diesen Befehl zu verwenden!",
+    "not_same_channel": "Du musst mit dem Bot im gleichen Sprachkanal sein um diesen Befehl zu verwenden"
   },
   "commands": {
     "echo": {
@@ -51,7 +53,8 @@
       "not_in_voice": "Du musst dafür in einem Sprach-Channel sein!"
     },
     "leave": {
-      "help": "Der Bot verlässt den Sprach-Channel"
+      "help": "Der Bot verlässt den Sprach-Channel",
+      "bot_not_alone_or_same_channel": "Der Bot muss für diesen Befehl alleine oder mit dir in einem Sprachkanal sein!"
     },
     "play": {
       "help": "Der Bot startet die Musikwiedergabe. Hierbei kann einer der Kanäle 'main, mellow, rock, world-etc' gewählt werden und eine Wiedergabe-Qualität '320k, 128k, 64k, 32k'. Standard sind main und 128k",
